@@ -46,13 +46,15 @@ When configuring Ollama in n8n:
 
 ## Data Persistence
 
-### n8n Data
-- Uses external volume `n8n_data`
+### External Data Volumes
+- Uses external volume `n8n_data`, `postgres_data`, `qdrant_data`
 - Use existing data, ensure volume exists and is marked as external in docker-compose.yml
 - This volume is mounted from host system: `${HOME}/.n8n:/home/node/.n8n` (for MacOS and Linux)
 - Using existing data will ensure that the data is persisted even after unmouting the volume
 ```bash
 docker volume create n8n_data
+docker volume create postgres_data
+docker volume create qdrant_data
 docker volume ls
 ```
 
