@@ -40,3 +40,6 @@ tmp/
 # Environment specific files
 .env.*
 !.env.example 
+
+# Credential Backups
+backups/credentials_*.json
